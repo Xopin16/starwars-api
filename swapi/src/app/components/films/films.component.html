@@ -1,4 +1,8 @@
 <ul *ngFor="let item of filmList">
     <li>{{item.title}}</li>
+    <img
+    mat-card-image
+    [src]="saveImg(item)"
+  />
 </ul>
-<a routerLink="/planets">BOTON</a>
+

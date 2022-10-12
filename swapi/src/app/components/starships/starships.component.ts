@@ -29,4 +29,9 @@ export class StarshipsComponent implements OnInit {
     return new Array(this.numPages);
   }
 
+  saveImg(starship: Starship){
+    let nameStarship = starship.url.split("/")[5]
+    return `https://starwars-visualguide.com/assets/img/starships/${nameStarship}.jpg`
+  }
+
 }

@@ -17,4 +17,9 @@ export class FilmsComponent implements OnInit {
       this.filmList = resp.results;
     });
   }
+
+  saveImg(film: Film){
+    let nameFilm = film.url.split("/")[5]
+    return `https://starwars-visualguide.com/assets/img/films/${nameFilm}.jpg`
+  }
 }

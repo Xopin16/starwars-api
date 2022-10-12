@@ -14,6 +14,7 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { PlanetsComponent } from './components/planets/planets.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { IndiceComponent } from './components/indice/indice.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     VehiclesComponent,
     PlanetsComponent,
     StarshipsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    IndiceComponent
   ],
   imports: [
     BrowserModule,

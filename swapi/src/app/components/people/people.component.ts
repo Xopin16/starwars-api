@@ -29,4 +29,9 @@ export class PeopleComponent implements OnInit {
     return new Array(this.numPages);
   }
 
+  saveImg(people: People){
+    let namePers = people.url.split("/")[5]
+    return `https://starwars-visualguide.com/assets/img/characters/${namePers}.jpg`
+  }
+
 }

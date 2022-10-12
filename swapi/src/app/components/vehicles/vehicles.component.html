@@ -1,1 +1,12 @@
-<p>vehicles works!</p>
+<ul *ngFor="let item of vehicleList">
+  <li>{{ item.name }}</li>
+  <img
+    mat-card-image
+    [src]="saveImg(item)"
+  />
+</ul>
+<div>
+  <span *ngFor="let in of counter(); let i = index"
+    ><button (click)="getVehiclePage(i + 1)">{{ i + 1 }}</button>&nbsp;</span
+  >
+</div>

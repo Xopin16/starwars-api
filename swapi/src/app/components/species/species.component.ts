@@ -28,4 +28,11 @@ export class SpeciesComponent implements OnInit {
   counter() {
     return new Array(this.numPages);
   }
+
+  saveImg(specie: Specie){
+    let nameSpecie = specie.url.split("/")[5]
+    return `https://starwars-visualguide.com/assets/img/species/${nameSpecie}.jpg`
+  }
+
+  // 
 }

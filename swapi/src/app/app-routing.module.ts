@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FilmsComponent } from './components/films/films.component';
+import { IndiceComponent } from './components/indice/indice.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PeopleComponent } from './components/people/people.component';
 import { PlanetsComponent } from './components/planets/planets.component';
@@ -12,10 +13,11 @@ const routes: Routes = [
   {path: 'films', component: FilmsComponent},
   {path: 'people', component: PeopleComponent},
   {path: 'species', component: SpeciesComponent},
-  {path: 'vechiles', component: VehiclesComponent},
+  {path: 'vehicles', component: VehiclesComponent},
   {path: 'starships', component: StarshipsComponent},
   {path: 'planets', component: PlanetsComponent},
-  {path: '', redirectTo: '/films', pathMatch: 'full'},
+  {path: 'indice', component: IndiceComponent},
+  {path: '', redirectTo: '/indice', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
 ];
 

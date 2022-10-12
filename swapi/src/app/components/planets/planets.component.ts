@@ -19,4 +19,11 @@ export class PlanetsComponent implements OnInit {
     });
   }
 
+  saveImg(planet: Planet){
+    let namePlanet = planet.url.split("/")[5]
+    return `https://starwars-visualguide.com/assets/img/planets/${namePlanet}.jpg`
+  }
+
+  //https://starwars-visualguide.com/assets/img/planets/2.jpg
+
 }
