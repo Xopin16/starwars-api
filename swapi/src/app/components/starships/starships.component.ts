@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Starship } from 'src/app/interfaces/starships.inteface';
+import { StarshipsService } from 'src/app/services/starships.service';
 
 @Component({
   selector: 'app-starships',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarshipsComponent implements OnInit {
 
-  constructor() { }
+  starshipList: Starship[] = [];
+  numPages= 0;
+
+  constructor(private starshipService: StarshipsService) { }
 
   ngOnInit(): void {
+    this.getStarshipPage(1);
+  }
+
+  getStarshipPage(page: number) {
+    this.starshipService.getStarships(page).subscribe(resp =>  {
+      this.starshipList = resp.results;
+      this.numPages = Math.ceil(resp.count / 10);
+    });
+  }
+
+  counter() {
+    return new Array(this.numPages);
   }
 
 }

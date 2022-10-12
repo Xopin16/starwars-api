@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vehicle } from 'src/app/interfaces/vehicles.interface';
+import { VehiclesService } from 'src/app/services/vehicles.service';
 
 @Component({
   selector: 'app-vehicles',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehiclesComponent implements OnInit {
 
-  constructor() { }
+  vehicleList: Vehicle[] = [];
+  numPages = 0;
+
+  constructor(private vehicleService: VehiclesService) { }
 
   ngOnInit(): void {
+    this.getVehiclePage(1);
+  }
+
+  getVehiclePage(page: number) {
+    this.vehicleService.getVehicles(page).subscribe(resp =>  {
+      this.vehicleList = resp.results;
+      this.numPages = Math.ceil(resp.count / 10);
+    });
+  }
+
+  counter() {
+    return new Array(this.numPages);
   }
 
 }
